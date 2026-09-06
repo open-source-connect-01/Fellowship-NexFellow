@@ -23,7 +23,11 @@ export default function Home() {
         <Mentors />
         {/* <DemoDay /> */}
         <Timeline />
-        <CtaBanner />
+        <CtaBanner
+          subtitle="Applications are reviewed on a rolling basis. Spots in each cohort are limited."
+          href="/program"
+          buttonText="See the full program"
+        />
       </main>
       <Footer />
     </>

@@ -17,7 +17,7 @@ export default function CtaBanner({
             Ready to build something real?
           </h2>
           {subtitle && (
-            <p className="mt-3 text-sm text-white-warm/80 sm:text-base">
+            <p className="mt-4 text-base font-medium text-white-warm sm:text-lg sm:whitespace-nowrap">
               {subtitle}
             </p>
           )}
