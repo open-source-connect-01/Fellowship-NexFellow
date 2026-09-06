@@ -26,7 +26,7 @@ export default function QuoteSection() {
               key={stat.label}
               className="border-l-[1.6px] border-cream-darker pl-4"
             >
-              <div className="text-4xl font-extrabold text-teal-dark">
+              <div className="text-4xl font-extrabold text-teal">
                 {stat.value}
               </div>
               <div className="mt-1 text-sm font-medium text-ink-soft">
