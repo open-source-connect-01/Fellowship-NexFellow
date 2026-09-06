@@ -25,7 +25,7 @@ export default function Hero() {
           network, and experience needed to stand out.
         </p>
 
-        <div className="mt-8 mb-35 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-8 mb-12 flex flex-wrap items-center justify-center gap-4 sm:mb-35">
           <a
             href="/apply"
             className="rounded-sm bg-teal px-7 py-3 text-sm font-semibold text-white-warm transition-colors hover:bg-teal-dark"
@@ -40,7 +40,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <dl className="mx-auto mt-10 mb-40 grid max-w-6xl grid-cols-2 divide-x divide-y divide-cream-darker border border-cream-darker text-left sm:mt-16 sm:grid-cols-4 sm:divide-y-0">
+        <dl className="mx-auto mt-10 mb-12 grid max-w-6xl grid-cols-2 divide-x divide-y divide-cream-darker border border-cream-darker text-left sm:mt-16 sm:mb-40 sm:grid-cols-4 sm:divide-y-0">
           {stats.map((stat) => (
             <div key={stat.label} className="px-6 py-5">
               <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">
