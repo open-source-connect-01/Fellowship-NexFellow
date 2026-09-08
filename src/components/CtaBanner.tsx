@@ -1,30 +1,55 @@
 type CtaBannerProps = {
+  eyebrow?: string[];
   subtitle?: string;
   href?: string;
   buttonText?: string;
 };
 
 export default function CtaBanner({
+  eyebrow = ["Eight weeks", "Build in public", "Demo day"],
   subtitle,
   href = "/program",
   buttonText = "See the full program",
 }: CtaBannerProps) {
   return (
     <section className="bg-cream px-4 py-10 sm:px-6 sm:py-16">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 rounded-2xl bg-teal px-6 py-14 text-center shadow-lg shadow-teal/20 sm:gap-8 sm:rounded-3xl sm:py-28">
-        <div>
-          <h2 className="font-heading text-3xl font-bold tracking-tight text-white-warm sm:text-6xl">
-            Ready to build something real?
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center justify-center gap-6 overflow-hidden rounded-2xl bg-teal px-6 py-14 text-center shadow-lg shadow-teal/20 sm:gap-8 sm:rounded-3xl sm:py-28">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-white-warm/10 blur-3xl sm:-right-24 sm:-top-24 sm:h-80 sm:w-80"
+        />
+
+        <div className="relative z-10">
+          {eyebrow.length > 0 && (
+            <div className="mb-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-[11px] font-medium uppercase tracking-[0.25em] text-white-warm/60 sm:mb-6 sm:text-xs">
+              {eyebrow.map((item, index) => (
+                <span key={item} className="flex items-center gap-x-3">
+                  {index > 0 && (
+                    <span aria-hidden className="text-white-warm/40">
+                      &#9670;
+                    </span>
+                  )}
+                  {item}
+                </span>
+              ))}
+            </div>
+          )}
+
+          <h2 className="font-heading text-3xl font-bold leading-[1.05] tracking-tight text-white-warm sm:text-6xl">
+            <span className="block">Ready to build</span>
+            <span className="block">something real?</span>
           </h2>
+
           {subtitle && (
-            <p className="mt-4 text-base font-medium text-white-warm sm:text-lg sm:whitespace-nowrap">
+            <p className="mt-4 text-base font-medium text-white-warm/80 sm:mt-5 sm:text-lg sm:whitespace-nowrap">
               {subtitle}
             </p>
           )}
         </div>
+
         <a
           href={href}
-          className="inline-flex items-center gap-3 rounded-lg bg-night py-2 pl-5 pr-2 text-xs font-semibold capitalize text-cream transition-colors hover:bg-black sm:pl-7 sm:text-sm"
+          className="relative z-10 inline-flex items-center gap-3 rounded-lg bg-night py-2 pl-5 pr-2 text-xs font-semibold capitalize text-cream transition-colors hover:bg-black sm:pl-7 sm:text-sm"
         >
           {buttonText}
           <span

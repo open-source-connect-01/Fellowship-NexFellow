@@ -1,8 +1,8 @@
 const items = [
-  "Currently a student, at any stage or major",
   "Have a project, idea, or skill you want to build on, even an early one",
-  "Can commit real time to the fellowship for eight weeks",
-  "Want direct feedback, not just a certificate at the end",
+  "Ready to commit meaningful time throughout the eight weeks",  
+  "Want practical experience, honest feedback, and guidance from industry leaders",
+  "Excited to build, collaborate, experiment, and ship something real",
 ];
 
 export default function Eligibility() {
