@@ -1,6 +1,6 @@
 const stats = [
   { value: "8", label: "weeks of guided building" },
-  { value: "2", label: "tracks to choose from" },
+  { value: "4", label: "tracks to choose from" },
   { value: "10+", label: "live learning sessions" },
 ];
 
