@@ -1,9 +1,3 @@
-const navLinks = [
-  { label: "Program", href: "/program" },
-  { label: "Apply", href: "/apply" },
-  { label: "nexfellow.com", href: "/" },
-];
-
 const socials = [
   {
     label: "X",
@@ -42,58 +36,49 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-night text-cream/70">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="flex flex-col items-start justify-between gap-6 sm:flex-row">
-          <div>
-            <p className="text-base font-extrabold text-cream">
-              NexFellow<span className="font-semibold text-cream/40">Fellowship</span>
-            </p>
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-10 sm:flex-row sm:items-center">
+        <div>
+          <p className="text-base font-extrabold text-cream">
+            NexFellow <span className="font-semibold text-cream/40">Fellowship</span>
+          </p>
 
-            <div className="mt-4 flex gap-3">
-              {socials.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-md border border-cream/15 text-cream/70 transition-colors hover:border-cream/30 hover:text-cream"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="h-4 w-4"
-                  >
-                    {social.icon}
-                  </svg>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex gap-8 text-sm text-cream/50">
-            {navLinks.map((link) => (
+          <div className="mt-4 flex gap-3">
+            {socials.map((social) => (
               <a
-                key={link.label}
-                href={link.href}
-                className="transition-colors hover:text-cream"
+                key={social.label}
+                href={social.href}
+                aria-label={social.label}
+                className="flex h-9 w-9 items-center justify-center rounded-md border border-cream/15 text-cream/70 transition-colors hover:border-cream/30 hover:text-cream"
               >
-                {link.label}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="h-4 w-4"
+                >
+                  {social.icon}
+                </svg>
               </a>
             ))}
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-3 border-t border-cream/10 pt-6 text-xs text-cream/40 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} NexFellow</p>
-          <div className="flex items-center gap-3">
-            <a href="#" className="transition-colors hover:text-cream/70">
-              Terms and Conditions
-            </a>
-            <span aria-hidden>&middot;</span>
-            <a href="#" className="transition-colors hover:text-cream/70">
-              Privacy Policy
-            </a>
-          </div>
+        <div className="flex items-center gap-3 text-sm text-cream/50">
+          <a href="#" className="transition-colors hover:text-cream">
+            Terms and Conditions
+          </a>
+          <span aria-hidden className="text-lg leading-none">
+            &middot;
+          </span>
+          <a href="#" className="transition-colors hover:text-cream">
+            Privacy Policy
+          </a>
+          <span aria-hidden className="text-lg leading-none">
+            &middot;
+          </span>
+          <a href="#" className="transition-colors hover:text-cream">
+            Contact Us
+          </a>
         </div>
       </div>
     </footer>
