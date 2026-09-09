@@ -39,12 +39,24 @@ export default function ApplyForm() {
           href="#"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex items-center gap-2 rounded-sm bg-teal px-7 py-3 text-sm font-semibold text-white-warm transition-colors hover:bg-teal-dark"
+          className="mt-8 inline-flex items-center gap-2.5 rounded-md bg-teal px-8 py-4 text-base font-semibold text-white-warm transition-colors hover:bg-teal-dark"
         >
           Open application form
-          <span aria-hidden>&#8599;</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+            className="h-4 w-4"
+          >
+            <path d="M6 14 14 6M7 6h7v7" />
+          </svg>
         </a>
-        <p className="mt-3 text-xs text-ink-soft/70">
+        <p className="mt-3 text-sm text-ink-soft/80">
           Opens Google Forms in a new tab
         </p>
       </div>
