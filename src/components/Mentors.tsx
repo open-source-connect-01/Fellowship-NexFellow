@@ -1,38 +1,46 @@
+import Image from "next/image";
+
 const mentors = [
   {
-    name: "Rohit Nair",
+    name: "Aiswarya Venkitesh",
     role: "Founder",
     context: "Early stage startup",
+    image: "/mentors/aiswarya-venkitesh.png",
     color: "from-slate-700 to-slate-900",
   },
   {
-    name: "Ananya Mehta",
+    name: "Sunil Divvela",
     role: "Engineering Lead",
     context: "Product company",
+    image: "/mentors/sunil-divvela.png",
     color: "from-amber-200 to-orange-400",
   },
   {
-    name: "Karan Shah",
+    name: "Tanvi Kopardekar",
     role: "Product Designer",
     context: "Consumer app",
+    image: "/mentors/tanvi-kopardekar.png",
     color: "from-teal/40 to-teal-dark/60",
   },
   {
-    name: "Meera Iyer",
+    name: "Serena Lekhrajani",
     role: "Growth Lead",
     context: "B2B SaaS",
+    image: "/mentors/serena-lekhrajani.png",
     color: "from-sky-200 to-sky-400",
   },
   {
-    name: "Arjun Rao",
+    name: "Angus Wyllie",
     role: "Investor",
     context: "Early stage fund",
+    image: "/mentors/angus-wyllie.png",
     color: "from-slate-500 to-slate-700",
   },
   {
-    name: "Neha Verma",
+    name: "Nisha Sherra",
     role: "Data Scientist",
     context: "Applied ML team",
+    image: "/mentors/nisha-sherra.png",
     color: "from-rose-200 to-rose-400",
   },
 ];
@@ -56,15 +64,23 @@ export default function Mentors() {
           companies. Full lineup announced closer to the cohort start.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:auto-rows-fr sm:grid-cols-2 lg:grid-cols-3">
           {mentors.map((mentor) => (
             <div
               key={mentor.name}
-              className="flex items-stretch overflow-hidden rounded-lg border border-cream-darker bg-white-warm"
+              className="flex h-full items-stretch overflow-hidden rounded-lg border border-cream-darker bg-white-warm"
             >
               <div
-                className={`w-[42%] shrink-0 bg-gradient-to-br ${mentor.color}`}
-              />
+                className={`relative w-[42%] shrink-0 bg-gradient-to-br ${mentor.color}`}
+              >
+                <Image
+                  src={mentor.image}
+                  alt={mentor.name}
+                  fill
+                  sizes="(min-width: 1024px) 161px, (min-width: 640px) 21vw, 42vw"
+                  className="object-cover object-top"
+                />
+              </div>
               <div className="relative flex flex-1 flex-col justify-center gap-1 p-5">
                 <h3 className="text-lg font-bold text-ink">{mentor.name}</h3>
                 <p className="text-xs font-semibold uppercase tracking-wider text-teal-dark">
