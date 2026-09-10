@@ -25,16 +25,16 @@ export default function Hero() {
           network, and experience needed to stand out.
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-10 flex flex-row items-center justify-center gap-3">
           <a
             href="/apply"
-            className="rounded-sm bg-teal px-8 py-4 text-base font-semibold text-white-warm transition-colors hover:bg-teal-dark"
+            className="whitespace-nowrap rounded-sm bg-teal px-5 py-4 text-base font-semibold text-white-warm transition-colors hover:bg-teal-dark sm:px-8"
           >
             Apply now
           </a>
           <a
             href="/program"
-            className="rounded-sm border border-ink/20 px-8 py-4 text-base font-semibold text-ink transition-colors hover:border-ink/40"
+            className="whitespace-nowrap rounded-sm border border-ink/20 px-5 py-4 text-base font-semibold text-ink transition-colors hover:border-ink/40 sm:px-8"
           >
             See the program
           </a>
