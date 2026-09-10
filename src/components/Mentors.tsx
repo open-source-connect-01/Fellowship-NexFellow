@@ -83,10 +83,12 @@ export default function Mentors() {
               </div>
               <div className="relative flex flex-1 flex-col justify-center gap-1 p-5">
                 <h3 className="text-lg font-bold text-ink">{mentor.name}</h3>
-                <p className="text-xs font-semibold uppercase tracking-wider text-teal-dark">
+                <p className="text-[11px] font-semibold uppercase leading-tight tracking-wider text-teal-dark">
                   {mentor.role}
                 </p>
-                <p className="text-sm text-ink-soft">{mentor.context}</p>
+                <p className="text-[15px] leading-snug text-ink-soft">
+                  {mentor.context}
+                </p>
                 <span className="mt-3 flex h-7 w-7 items-center justify-center self-end text-teal-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
