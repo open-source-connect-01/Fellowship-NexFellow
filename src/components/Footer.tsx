@@ -64,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 text-sm text-cream/50">
+        <div className="flex w-full flex-nowrap items-center justify-between whitespace-nowrap text-xs text-cream/50 sm:w-auto sm:justify-start sm:gap-3 sm:text-sm">
           <a href="#" className="transition-colors hover:text-cream">
             Terms and Conditions
           </a>

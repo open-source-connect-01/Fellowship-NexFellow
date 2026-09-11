@@ -40,7 +40,7 @@ export default function Hero() {
           </a>
         </div>
 
-        <dl className="mx-auto mt-36 grid max-w-6xl grid-cols-2 divide-x divide-y divide-cream-darker border border-cream-darker text-left sm:grid-cols-4 sm:divide-y-0">
+        <dl className="mx-auto mt-10 grid max-w-6xl grid-cols-2 divide-x divide-y divide-cream-darker border border-cream-darker text-left sm:mt-36 sm:grid-cols-4 sm:divide-y-0">
           {stats.map((stat) => (
             <div key={stat.label} className="px-6 py-5">
               <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">
