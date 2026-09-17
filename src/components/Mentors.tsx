@@ -46,17 +46,24 @@ const mentors = [
     image: "/mentors/nisha-sherra.png",
     color: "from-rose-200 to-rose-400",
   },
+    {
+    name: "Anisha Ramakrishna Yarlapati",
+    role: "Product Manager",
+    context: "Adobe",
+    image: "/mentors/anisha-ramakrishna-yarlapati.png",
+    color: "from-sky-200 to-sky-400",
+  },
+    {
+    name: "Kunal Sharma",
+    role: "Product Lead",
+    context: "Stripe",
+    image: "/mentors/kunal-sharma.png",
+    color: "from-slate-700 to-slate-900",
+  },
 ];
 
-const CARDS_PER_PAGE = 6;
-
-function chunk<T>(items: T[], size: number): T[][] {
-  const pages: T[][] = [];
-  for (let i = 0; i < items.length; i += size) {
-    pages.push(items.slice(i, i + size));
-  }
-  return pages;
-}
+const VISIBLE_COUNT = 6;
+const STEP = 2;
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -76,9 +83,10 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
 }
 
 export default function Mentors() {
-  const pages = chunk(mentors, CARDS_PER_PAGE);
-  const [page, setPage] = useState(0);
-  const hasSlider = pages.length > 1;
+  const [start, setStart] = useState(0);
+  const maxStart = Math.max(0, mentors.length - VISIBLE_COUNT);
+  const hasSlider = mentors.length > VISIBLE_COUNT;
+  const visible = mentors.slice(start, start + VISIBLE_COUNT);
 
   return (
     <section className="border-b border-ink/10 bg-cream">
@@ -99,11 +107,11 @@ export default function Mentors() {
         </p>
 
         <div className="relative mt-10">
-          <div className="grid grid-cols-1 gap-5 sm:auto-rows-fr sm:grid-cols-2 lg:grid-cols-3">
-            {pages[page].map((mentor) => (
+          <div className="grid grid-flow-col auto-cols-fr grid-rows-6 gap-5 sm:grid-rows-3 lg:grid-rows-2">
+            {visible.map((mentor) => (
               <div
-                key={mentor.name}
-                className="flex h-full items-stretch overflow-hidden rounded-lg border border-cream-darker bg-white-warm"
+                key={`${start}-${mentor.name}`}
+                className="flex h-48 items-stretch overflow-hidden rounded-lg border border-cream-darker bg-white-warm animate-[fadeSlideIn_0.35s_ease-out]"
               >
                 <div
                   className={`relative w-[42%] shrink-0 bg-gradient-to-br ${mentor.color}`}
@@ -117,11 +125,13 @@ export default function Mentors() {
                   />
                 </div>
                 <div className="relative flex flex-1 flex-col justify-center gap-1 p-5">
-                  <h3 className="text-lg font-bold text-ink">{mentor.name}</h3>
-                  <p className="text-[11px] font-semibold uppercase leading-tight tracking-wider text-teal-dark">
+                  <h3 className="line-clamp-2 text-lg font-bold leading-tight text-ink">
+                    {mentor.name}
+                  </h3>
+                  <p className="line-clamp-2 text-[11px] font-semibold uppercase leading-tight tracking-wider text-teal-dark">
                     {mentor.role}
                   </p>
-                  <p className="text-[15px] leading-snug text-ink-soft">
+                  <p className="line-clamp-1 text-[15px] leading-snug text-ink-soft">
                     {mentor.context}
                   </p>
                   <span className="mt-3 flex h-7 w-7 items-center justify-center self-end text-teal-dark">
@@ -147,19 +157,19 @@ export default function Mentors() {
             <>
               <button
                 type="button"
-                onClick={() => setPage((p) => Math.max(0, p - 1))}
-                disabled={page === 0}
+                onClick={() => setStart((s) => Math.max(0, s - STEP))}
+                disabled={start === 0}
                 aria-label="Previous mentors"
-                className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30"
+                className="absolute -left-4 top-1/2 flex h-10 w-10 -translate-x-full -translate-y-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 sm:-left-6"
               >
                 <ChevronIcon direction="left" />
               </button>
               <button
                 type="button"
-                onClick={() => setPage((p) => Math.min(pages.length - 1, p + 1))}
-                disabled={page === pages.length - 1}
+                onClick={() => setStart((s) => Math.min(maxStart, s + STEP))}
+                disabled={start === maxStart}
                 aria-label="Next mentors"
-                className="absolute right-0 top-1/2 flex h-10 w-10 -translate-y-1/2 translate-x-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30"
+                className="absolute -right-4 top-1/2 flex h-10 w-10 translate-x-full -translate-y-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 sm:-right-6"
               >
                 <ChevronIcon direction="right" />
               </button>
