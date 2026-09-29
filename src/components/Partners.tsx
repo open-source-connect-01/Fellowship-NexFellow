@@ -66,8 +66,8 @@ type Slot =
 const supportingPartners: Slot[] = [
   { kind: "logo", name: "Open Source Connect", render: OpenSourceConnectLogo },
   { kind: "logo", name: "adaption", render: AdaptionLogo },
-  { kind: "placeholder", label: "" },
-  { kind: "placeholder", label: "Partner 04" },
+  // { kind: "placeholder", label: "" },
+  // { kind: "placeholder", label: "Partner 04" },
 ];
 
 const mediaPartners: Slot[] = [
@@ -79,7 +79,7 @@ const mediaPartners: Slot[] = [
 const communityPartners: Slot[] = [
   { kind: "logo", name: "DevXpanse", render: DevXpanseLogo },
   { kind: "logo", name: "aeapify", render: AeapifyLogo },
-  { kind: "placeholder", label: "Partner 03" },
+  // { kind: "placeholder", label: "Partner 03" },
 ];
 
 function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
@@ -87,7 +87,7 @@ function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
     <div className="mt-10 first:mt-10">
       <p className="text-xs text-ink-soft">{label}</p>
       <div
-        className={`mt-3 grid divide-y divide-cream-darker rounded-md border border-cream-darker sm:divide-x sm:divide-y-0 ${slots.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"
+        className={`mt-3 grid divide-y divide-cream-darker rounded-md sm:divide-x sm:divide-y-0 ${slots.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"
           }`}
       >
         {slots.map((slot, i) =>
@@ -129,7 +129,7 @@ export default function Partners() {
         </p>
 
         <PartnerRow label="Supporting partners" slots={supportingPartners} />
-        <PartnerRow label="Media partners" slots={mediaPartners} />
+        {/* <PartnerRow label="Media partners" slots={mediaPartners} /> */}
         <PartnerRow label="Community Partners" slots={communityPartners} />
       </div>
     </section>
