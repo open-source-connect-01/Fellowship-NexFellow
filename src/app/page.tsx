@@ -5,6 +5,7 @@ import BuiltOn from "@/components/BuiltOn";
 import Tracks from "@/components/Tracks";
 import WalkAway from "@/components/WalkAway";
 import Mentors from "@/components/Mentors";
+import Partners from "@/components/Partners";
 import DemoDay from "@/components/DemoDay";
 import Timeline from "@/components/Timeline";
 import CtaBanner from "@/components/CtaBanner";
@@ -21,6 +22,7 @@ export default function Home() {
         <Tracks />
         <WalkAway />
         <Mentors />
+        <Partners />
         {/* <DemoDay /> */}
         <Timeline />
         <CtaBanner
