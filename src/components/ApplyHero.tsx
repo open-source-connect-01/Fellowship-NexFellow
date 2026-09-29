@@ -29,7 +29,7 @@ export default function ApplyHero() {
           <dl className="divide-y divide-cream-darker border border-cream-darker bg-white-warm">
             {details.map((detail) => (
               <div key={detail.label} className="px-6 py-5">
-                <dt className="text-xs font-semibold uppercase tracking-wider text-ink-soft/70">
+                <dt className="text-xs font-semibold uppercase tracking-wider text-teal-dark">
                   {detail.label}
                 </dt>
                 <dd className="mt-2 text-base font-semibold text-ink">
