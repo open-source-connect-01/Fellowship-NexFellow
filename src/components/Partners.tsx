@@ -60,12 +60,12 @@ function AeapifyLogo() {
 
 
 type Slot =
-  | { kind: "logo"; name: string; render: () => React.ReactNode }
+  | { kind: "logo"; name: string; href?: string; render: () => React.ReactNode }
   | { kind: "placeholder"; label: string };
 
 const supportingPartners: Slot[] = [
-  { kind: "logo", name: "Open Source Connect", render: OpenSourceConnectLogo },
-  { kind: "logo", name: "adaption", render: AdaptionLogo },
+  { kind: "logo", name: "Open Source Connect", href: "https://www.osconnect.org/", render: OpenSourceConnectLogo },
+  { kind: "logo", name: "adaption", href: "https://adaptionlabs.ai/", render: AdaptionLogo },
   // { kind: "placeholder", label: "" },
   // { kind: "placeholder", label: "Partner 04" },
 ];
@@ -77,8 +77,8 @@ const mediaPartners: Slot[] = [
 ];
 
 const communityPartners: Slot[] = [
-  { kind: "logo", name: "DevXpanse", render: DevXpanseLogo },
-  { kind: "logo", name: "aeapify", render: AeapifyLogo },
+  { kind: "logo", name: "DevXpanse", href: "", render: DevXpanseLogo },
+  { kind: "logo", name: "aeapify", href: "", render: AeapifyLogo },
   // { kind: "placeholder", label: "Partner 03" },
 ];
 
@@ -101,7 +101,19 @@ function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
               key={slot.name}
               className="flex h-24 items-center justify-center px-4 sm:px-6"
             >
-              <slot.render />
+              {slot.href ? (
+                <a
+                  href={slot.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={slot.name}
+                  className="flex items-center justify-center transition-opacity hover:opacity-80"
+                >
+                  <slot.render />
+                </a>
+              ) : (
+                <slot.render />
+              )}
             </div>
           ) : (
             <div
