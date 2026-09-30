@@ -87,7 +87,7 @@ function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
     <div className="mt-10 first:mt-10">
       <p className="text-xs text-ink-soft">{label}</p>
       <div
-        className={`mt-3 grid divide-y divide-cream-darker rounded-md sm:divide-x sm:divide-y-0 ${slots.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"
+        className={`mt-3 grid rounded-md ${slots.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"
           }`}
       >
         {slots.map((slot, i) =>
