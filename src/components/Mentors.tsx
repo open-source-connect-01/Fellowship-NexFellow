@@ -90,7 +90,7 @@ export default function Mentors() {
 
   return (
     <section className="border-b border-ink/10 bg-cream">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <div className="flex max-w-md items-center gap-3">
           <span className="whitespace-nowrap font-mono text-xs uppercase tracking-widest text-teal-dark">
             Who you&apos;ll learn from
@@ -107,11 +107,11 @@ export default function Mentors() {
         </p>
 
         <div className="relative mt-10">
-          <div className="grid grid-flow-col auto-cols-fr grid-rows-6 gap-5 sm:grid-rows-3 lg:grid-rows-2">
+          <div className="grid grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {visible.map((mentor) => (
               <div
                 key={`${start}-${mentor.name}`}
-                className="flex h-48 items-stretch overflow-hidden rounded-lg border border-cream-darker bg-white-warm animate-[fadeSlideIn_0.35s_ease-out]"
+                className="flex h-40 items-stretch sm:h-48 overflow-hidden rounded-lg border border-cream-darker bg-white-warm animate-[fadeSlideIn_0.35s_ease-out]"
               >
                 <div
                   className={`relative w-[42%] shrink-0 bg-gradient-to-br ${mentor.color}`}
@@ -120,12 +120,12 @@ export default function Mentors() {
                     src={mentor.image}
                     alt={mentor.name}
                     fill
-                    sizes="(min-width: 1024px) 161px, (min-width: 640px) 21vw, 42vw"
+                    sizes="(min-width: 1024px) 130px, (min-width: 768px) 20vw, 42vw"
                     className="object-cover object-top"
                   />
                 </div>
-                <div className="relative flex flex-1 flex-col justify-center gap-1 p-5">
-                  <h3 className="line-clamp-2 text-lg font-bold leading-tight text-ink">
+                <div className="relative flex flex-1 flex-col justify-center gap-1 p-4 sm:p-5">
+                  <h3 className="line-clamp-2 text-base font-bold sm:text-lg leading-tight text-ink">
                     {mentor.name}
                   </h3>
                   <p className="line-clamp-2 text-[11px] font-semibold uppercase leading-tight tracking-wider text-teal-dark">
@@ -154,13 +154,13 @@ export default function Mentors() {
           </div>
 
           {hasSlider && (
-            <>
+            <div className="mt-6 flex justify-center gap-3 xl:mt-0 xl:block">
               <button
                 type="button"
                 onClick={() => setStart((s) => Math.max(0, s - STEP))}
                 disabled={start === 0}
                 aria-label="Previous mentors"
-                className="absolute -left-4 top-1/2 flex h-10 w-10 -translate-x-full -translate-y-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 sm:-left-6"
+                className="flex h-10 w-10 items-center xl:absolute xl:-left-4 xl:top-1/2 xl:-translate-x-full xl:-translate-y-1/2 justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 xl:-left-6"
               >
                 <ChevronIcon direction="left" />
               </button>
@@ -169,11 +169,11 @@ export default function Mentors() {
                 onClick={() => setStart((s) => Math.min(maxStart, s + STEP))}
                 disabled={start === maxStart}
                 aria-label="Next mentors"
-                className="absolute -right-4 top-1/2 flex h-10 w-10 translate-x-full -translate-y-1/2 items-center justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 sm:-right-6"
+                className="flex h-10 w-10 items-center xl:absolute xl:-right-4 xl:top-1/2 xl:translate-x-full xl:-translate-y-1/2 justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 xl:-right-6"
               >
                 <ChevronIcon direction="right" />
               </button>
-            </>
+            </div>
           )}
         </div>
       </div>

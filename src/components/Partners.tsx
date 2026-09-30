@@ -1,6 +1,6 @@
 function OpenSourceConnectLogo() {
   return (
-    <svg width="150" height="55" viewBox="0 0 168 65" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg width="150" height="55" className="h-auto w-full max-w-[150px]" viewBox="0 0 168 65" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="168" height="65" fill="url(#pattern0_5635_14732)" />
       <defs>
         <pattern id="pattern0_5635_14732" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -15,7 +15,7 @@ function OpenSourceConnectLogo() {
 
 function AdaptionLogo() {
   return (
-    <svg width="285" height="85" viewBox="0 0 293 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg width="285" height="85" className="h-auto w-full max-w-[285px]" viewBox="0 0 293 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="293" height="100" fill="url(#pattern0_5635_14735)" />
       <defs>
         <pattern id="pattern0_5635_14735" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -30,7 +30,7 @@ function AdaptionLogo() {
 
 function DevXpanseLogo() {
   return (
-    <svg width="155" height="70" viewBox="0 0 161 79" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg width="155" height="70" className="h-auto w-full max-w-[155px]" viewBox="0 0 161 79" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="161" height="79" fill="url(#pattern0_5635_14756)" />
       <defs>
         <pattern id="pattern0_5635_14756" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -45,7 +45,7 @@ function DevXpanseLogo() {
 
 function AeapifyLogo() {
   return (
-    <svg width="140" height="86" viewBox="0 0 150 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+    <svg width="140" height="86" className="h-auto w-full max-w-[140px]" viewBox="0 0 150 106" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <rect width="150" height="105.028" fill="url(#pattern0_5718_14733)" />
       <defs>
         <pattern id="pattern0_5718_14733" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -87,21 +87,26 @@ function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
     <div className="mt-10 first:mt-10">
       <p className="text-xs text-ink-soft">{label}</p>
       <div
-        className={`mt-3 grid rounded-md ${slots.length === 4 ? "sm:grid-cols-4" : "sm:grid-cols-3"
-          }`}
+        className={`mt-3 grid grid-cols-1 gap-y-2 ${
+          slots.length >= 4
+            ? "min-[480px]:grid-cols-2 lg:grid-cols-4"
+            : slots.length === 3
+              ? "min-[480px]:grid-cols-2 md:grid-cols-3"
+              : "min-[480px]:grid-cols-2"
+        }`}
       >
         {slots.map((slot, i) =>
           slot.kind === "logo" ? (
             <div
               key={slot.name}
-              className="flex h-24 items-center justify-center px-6"
+              className="flex h-24 items-center justify-center px-4 sm:px-6"
             >
               <slot.render />
             </div>
           ) : (
             <div
               key={`${label}-${i}`}
-              className="flex h-24 items-center justify-center px-6"
+              className="flex h-24 items-center justify-center px-4 sm:px-6"
             >
               {slot.label && (
                 <span className="text-xs uppercase tracking-wide text-ink-soft/40">
@@ -119,7 +124,7 @@ function PartnerRow({ label, slots }: { label: string; slots: Slot[] }) {
 export default function Partners() {
   return (
     <section className="border-b border-ink/10 bg-cream">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
         <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
           Partners
         </h2>
