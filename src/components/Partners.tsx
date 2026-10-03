@@ -58,6 +58,18 @@ function AeapifyLogo() {
   );
 }
 
+function OpmLogo() {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/partners/opmLogo.png"
+      alt="OPM"
+      width={1200}
+      height={173}
+      className="h-auto w-full max-w-[150px]"
+    />
+  );
+}
 
 type Slot =
   | { kind: "logo"; name: string; href?: string; render: () => React.ReactNode }
@@ -66,7 +78,7 @@ type Slot =
 const supportingPartners: Slot[] = [
   { kind: "logo", name: "Open Source Connect", href: "https://www.osconnect.org/", render: OpenSourceConnectLogo },
   { kind: "logo", name: "adaption", href: "https://adaptionlabs.ai/", render: AdaptionLogo },
-  // { kind: "placeholder", label: "" },
+  { kind: "logo", name: "opm", href: "https://www.opmcorporation.com/", render: OpmLogo },
   // { kind: "placeholder", label: "Partner 04" },
 ];
 
