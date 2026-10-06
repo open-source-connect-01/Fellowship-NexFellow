@@ -38,7 +38,7 @@ const mentors = [
   },
   {
     name: "Angus Wyllie",
-    bio: "12+ years in software engineering at Electronic Arts, working across Generative AI, LLMs, and agentic systems. Helps builders turn ideas into practical, usable products.",
+    bio: "Product strategy and user research specialist who helps teams get in front of customers, define useful products, and turn ideas into businesses. He works across UI/UX, AI agents, hiring, fundraising, and building the tools teams need to scale.",
     role: "Chief of Staff",
     context: "Iridium Credit",
     image: "/mentors/angus-wyllie.png",
