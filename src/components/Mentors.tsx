@@ -68,10 +68,42 @@ const mentors = [
     image: "/mentors/kunal-sharma.png",
     color: "from-slate-700 to-slate-900",
   },
+  {
+    name: "Ishan Shah",
+    bio: "Software Engineer at PayPal. Brings hands-on engineering experience to help builders ship reliable, well-built products.",
+    role: "Software Engineer",
+    context: "PayPal",
+    image: "/mentors/Ishan-Shah.png",
+    color: "from-sky-200 to-sky-400",
+  },
+  {
+    name: "Sai Prasad Veluru",
+    bio: "Senior Software Engineer at Immihub with prior engineering experience at Apple and JPMC. Helps builders design and ship software that works at scale.",
+    role: "Senior Software Engineer",
+    context: "Immihub, Ex-Apple, Ex-JPMC",
+    image: "/mentors/Sai-Prasad-Veluru.png",
+    color: "from-amber-200 to-orange-400",
+  },
+  {
+    name: "Hooman Pirouz",
+    bio: "Co-Founder and CPO of Sonibel Instruments. Shares practical product and founder experience to help builders turn ideas into real products.",
+    role: "Co-Founder, CPO",
+    context: "Sonibel Instruments",
+    image: "/mentors/Hooman-Pirouz.png",
+    color: "from-rose-200 to-rose-400",
+  },
+  {
+    name: "Serhii Bykov",
+    bio: "Senior iOS Engineer at Lyft. Brings deep mobile engineering experience to help builders create polished, production-quality apps.",
+    role: "Senior iOS Engineer",
+    context: "Lyft",
+    image: "/mentors/Serhii-Bykov.png",
+    color: "from-slate-500 to-slate-700",
+  },
 ];
 
 const VISIBLE_COUNT = 6;
-const STEP = 2;
+const STEP = VISIBLE_COUNT;
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -92,7 +124,6 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
 
 export default function Mentors() {
   const [start, setStart] = useState(0);
-  const maxStart = Math.max(0, mentors.length - VISIBLE_COUNT);
   const hasSlider = mentors.length > VISIBLE_COUNT;
   const visible = mentors.slice(start, start + VISIBLE_COUNT);
 
@@ -184,8 +215,8 @@ export default function Mentors() {
               </button>
               <button
                 type="button"
-                onClick={() => setStart((s) => Math.min(maxStart, s + STEP))}
-                disabled={start === maxStart}
+                onClick={() => setStart((s) => s + STEP)}
+                disabled={start + VISIBLE_COUNT >= mentors.length}
                 aria-label="Next mentors"
                 className="flex h-10 w-10 items-center xl:absolute xl:-right-4 xl:top-1/2 xl:translate-x-full xl:-translate-y-1/2 justify-center rounded-full border border-ink/15 bg-white-warm text-ink shadow-sm transition hover:border-teal-dark hover:text-teal-dark disabled:cursor-not-allowed disabled:opacity-30 xl:-right-6"
               >
