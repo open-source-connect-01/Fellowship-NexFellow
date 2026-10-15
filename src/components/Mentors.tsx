@@ -100,6 +100,22 @@ const mentors = [
     image: "/mentors/Serhii-Bykov.png",
     color: "from-slate-500 to-slate-700",
   },
+  {
+    name: "Vipul Panday",
+    bio: "SVP of Product Management for GenAI at Citi. Brings experience shaping AI products in a large enterprise to help builders turn ideas into products people actually use.",
+    role: "SVP - Product Management GenAI",
+    context: "Citi",
+    image: "/mentors/Vipul-Panday.png",
+    color: "from-slate-700 to-slate-900",
+  },
+  {
+    name: "Bhargav Krishna Korrapati",
+    bio: "Senior Software Engineer at Gateway Solutions. Brings hands-on engineering experience to help builders design, build, and ship dependable software.",
+    role: "Sr Software Engineer",
+    context: "Gateway Solutions., Inc.",
+    image: "/mentors/Bhargav-Krishna-Korrapati.png",
+    color: "from-teal/40 to-teal-dark/60",
+  },
 ];
 
 const VISIBLE_COUNT = 6;
