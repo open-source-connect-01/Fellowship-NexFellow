@@ -84,6 +84,32 @@ function OptvsnJourneyLogo() {
   );
 }
 
+function codeHiveLogo() {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/partners/codeHiveLogo.png"
+      alt="Code Hive"
+      width={208}
+      height={188}
+      className="h-auto max-h-24 w-auto"
+    />
+  );
+}
+
+function certXchangeLogo() {
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/partners/certXchangeLogo.png"
+      alt="CertXchange"
+      width={1300}
+      height={183}
+      className="h-auto w-full max-w-[220px]"
+    />
+  );
+}
+
 type Slot =
   | { kind: "logo"; name: string; href?: string; render: () => React.ReactNode }
   | { kind: "placeholder"; label: string };
@@ -104,6 +130,8 @@ const mediaPartners: Slot[] = [
 const communityPartners: Slot[] = [
   { kind: "logo", name: "DevXpanse", href: "", render: DevXpanseLogo },
   { kind: "logo", name: "aeapify", href: "", render: AeapifyLogo },
+  { kind: "logo", name: "codeHive", href: "", render: codeHiveLogo },
+  { kind: "logo", name: "certXchange", href: "", render: certXchangeLogo },
   // { kind: "placeholder", label: "Partner 03" },
 ];
 
