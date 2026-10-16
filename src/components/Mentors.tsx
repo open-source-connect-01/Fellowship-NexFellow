@@ -116,6 +116,38 @@ const mentors = [
     image: "/mentors/Bhargav-Krishna-Korrapati.png",
     color: "from-teal/40 to-teal-dark/60",
   },
+  {
+    name: "Sergey Speranskiy",
+    bio: "Senior Infrastructure Platform Engineer at Social Discovery Group. Brings platform and infrastructure experience to help builders run reliable, scalable systems.",
+    role: "Senior Infrastructure Platform Engineer",
+    context: "Social Discovery Group",
+    image: "/mentors/Sergey-Speranskiy.png",
+    color: "from-sky-200 to-sky-400",
+  },
+  {
+    name: "Krystal Phan",
+    bio: "Senior Product Manager at Global Chamber. Helps builders sharpen their product thinking and turn ideas into products that solve real problems.",
+    role: "Senior Product Manager",
+    context: "Global Chamber",
+    image: "/mentors/Krystal-Phan.png",
+    color: "from-rose-200 to-rose-400",
+  },
+  {
+    name: "Shipra Sonal",
+    bio: "Data Engineering Manager at Amazon. Brings experience leading data teams to help builders design solid data pipelines and make data-driven decisions.",
+    role: "Data Engineering Manager",
+    context: "Amazon",
+    image: "/mentors/Shipra-Sonal.png",
+    color: "from-amber-200 to-orange-400",
+  },
+  {
+    name: "Brent Soffey",
+    bio: "Enterprise Sales at Simpplr. Shares go-to-market and customer experience to help builders pitch, position, and sell what they build.",
+    role: "Enterprise Sales",
+    context: "Simpplr",
+    image: "/mentors/Brent-Soffey.png",
+    color: "from-slate-500 to-slate-700",
+  },
 ];
 
 const VISIBLE_COUNT = 6;
