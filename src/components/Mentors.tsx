@@ -148,6 +148,22 @@ const mentors = [
     image: "/mentors/Brent-Soffey.png",
     color: "from-slate-500 to-slate-700",
   },
+  {
+    name: "Mayank Sehgal",
+    bio: "Senior Product Manager at Port Global. Helps builders find the right problem, prioritize what matters, and ship products that deliver real value.",
+    role: "Senior Product Manager",
+    context: "Port Global Ltd",
+    image: "/mentors/Mayank-Sehgal.png",
+    color: "from-slate-700 to-slate-900",
+  },
+  {
+    name: "Nikolai Smetannikov",
+    bio: "Software Architect at Parallels. Brings deep systems and architecture experience to help builders design software that is clean, scalable, and built to last.",
+    role: "Software Architect",
+    context: "Parallels",
+    image: "/mentors/Nikolai-Smetannikov.png",
+    color: "from-teal/40 to-teal-dark/60",
+  },
 ];
 
 const VISIBLE_COUNT = 6;
