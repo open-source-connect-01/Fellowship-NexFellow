@@ -1,7 +1,7 @@
 const details = [
   { label: "Applications close", value: "10 October 2026" },
   { label: "Decisions by", value: "14 October 2026" },
-  { label: "Cohort starts", value: "16 October 2026" },
+  { label: "Cohort starts", value: "1 November 2026" },
 ];
 
 export default function ApplyHero() {
